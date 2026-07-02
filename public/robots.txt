@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://maghrebgraphic.com/sitemap.xml
