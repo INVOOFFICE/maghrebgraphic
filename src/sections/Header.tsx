@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Search } from 'lucide-react';
 import { trackEvent } from '../lib/tracking';
 
 const navLinks = [
@@ -69,7 +68,18 @@ export default function Header() {
     >
       <div className="container-main">
         <div className="flex items-center justify-between h-[70px]">
-          {/* Left Nav */}
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3">
+            <img src="/logo2.png" alt="Maghreb Graphic" className="h-[5.25rem] w-auto object-contain" decoding="async" />
+            <span className="text-xl font-bold text-gray-900">
+              Maghreb{' '}
+              <span className="bg-primary text-white px-1.5 py-0.5 rounded-md">
+                Graphic
+              </span>
+            </span>
+          </a>
+
+          {/* Nav */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <button
@@ -85,25 +95,6 @@ export default function Header() {
               </button>
             ))}
           </nav>
-
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
-            <img src="/logo2.png" alt="Maghreb Graphic" className="h-[5.25rem] w-auto object-contain" decoding="async" />
-            <span className="text-xl font-bold text-gray-900">Maghreb Graphic</span>
-          </a>
-
-          {/* Right Actions */}
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center bg-gray-100 rounded-button px-4 py-2 gap-2">
-              <Search className="w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search products..."
-                aria-label="Rechercher"
-                className="bg-transparent text-sm text-gray-700 placeholder-gray-400 outline-none w-40"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </header>
